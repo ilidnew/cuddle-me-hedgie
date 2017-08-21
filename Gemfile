@@ -18,6 +18,9 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+# Date picker for Booking form
+gem 'bootstrap-datepicker-rails'
+
 
 group :development, :test do
   gem 'pry-byebug'
