@@ -1,17 +1,85 @@
-#new_hedgie {
-  display: inline-block;
-  width: 800px;
-  height: 600px;
-  margin: 60px;
+.challenges-new {
+  overflow: hidden;
+
 }
 
-#typeform_launch_button {
- display: inline-block;
- width: 200px;
- line-height: 50px;
- font-family: "Helvetica Nueue";
- text-transform: uppercase;
- border: none;
- color: red;
- font-size: 20px;
+.form-control {
+  &:focus {
+    outline: 0;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}
+
+.questions-container {
+  background: $green;
+  color: white;
+}
+
+.question-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-content {
+  font-size: 25px;
+  max-width: 400px;
+  padding: 20px;
+
+  .no-highlight {
+    opacity: .6;
+  }
+}
+
+.summary {
+  .p_sum {
+    font-size: 25px;
+    opacity: 1;
+  }
+  .no-highlight {
+    opacity: .6;
+  }
+}
+
+.question-input-container {
+  input {
+    height: auto;
+    padding: 15px;
+    margin-top: 25px;
+    max-width: 250px;
+  }
+}
+
+.question-next-button {
+  a {
+    color: white;
+    background: rgba(255, 255, 255, 0.24);
+    border: 2px solid white;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 19px;
+    text-decoration: none;
+
+    &:hover {
+      transition: all 200ms ease;
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.hedgie_submit {
+    border: none;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    color: $brand-success;
+    padding: 18px 15px;
+    transform: scale(1);
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 200ms ease;
+  }
 }
