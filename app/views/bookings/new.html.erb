@@ -1,5 +1,5 @@
-<h1>Book playtime with <%= @hedgy.name %></h1>
-<%= simple_form_for([@hedgy, @booking]) do |f| %>
+<h1>Book playtime with <%= @hedgie.name %></h1>
+<%= simple_form_for([@hedgie, @booking]) do |f| %>
 <%= f.input :start_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
 <%= f.input :end_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
 
