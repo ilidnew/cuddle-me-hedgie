@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
+
   def new
+    @hedgy = Hedgie.find(params[:hedgy_id])
     @booking = Booking.new
   end
 
@@ -8,10 +10,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to profile_path(@user)
+      redirect_to profile_path(@booking.user)
     else
       render :new
-
     end
   end
 
