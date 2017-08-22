@@ -32,7 +32,7 @@ class HedgiesController < ApplicationController
     @user = @hedgie.user
     @hedgie.update(hedgie_params)
     if @hedgie.save
-      redirect_to hedgie_path(@hedgie), alert:"hedgie created successfully."
+      redirect_to hedgie_path(@hedgie), notice:"hedgie created successfully."
     else
       render :new, alert: "Error creating hedgie."
     end
@@ -42,7 +42,7 @@ class HedgiesController < ApplicationController
     @hedgie = Hedgie.find(params[:id])
     @hedgie.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'hedgie was successfully delete.' }
+      format.html { redirect_to root_path, alert: 'hedgie was successfully delete.' }
       format.json { head :no_content }
   end
 
