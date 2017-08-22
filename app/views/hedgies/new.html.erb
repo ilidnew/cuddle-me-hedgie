@@ -1,0 +1,72 @@
+<%=simple_form_for @hedgie do |f| %>
+<div class='questions-container'>
+  <div class="question-container" id='next1' data-next='#next2'  >
+    <div class="question-content">
+      <div>
+        What's the name of your hedgie?
+      </div>
+      <div class='question-input-container'>
+        <%= f.input :name, class: "new_hedgie_input", placeholder: "Sammy the Hedgehog", label: false %>
+      </div>
+      <div class='question-next-button'>
+        <a href='#next2' id="button1" >Ok!</a>
+      </div>
+    </div>
+  </div>
+  <div class="question-container" id='next2' data-prev='#next1' data-next='#next3'>
+    <div class="question-content">
+      <div>
+        Tell us a little bit about your hedgie.
+      </div>
+      <div class='question-input-container'>
+        <%= f.input :description, class: "new_hedgie_input", placeholder: "I love to cuddle!", label: false %>
+      </div>
+      <div class='question-next-button'>
+        <a href='#next3' id="button2">Ok!</a>
+      </div>
+    </div>
+  </div>
+  <div class="question-container" id='next3' data-prev='#next2' data-next='#next4'>
+    <div class="question-content">
+      <div>
+        Set a daily price to play with your hedgie.
+      </div>
+      <div class='question-input-container'>
+        <%= f.input :price, class: "new_hedgie_input", placeholder: '‎€ 10', label: false %>
+      </div>
+      <div class='question-next-button'>
+        <a href='#summary' id="button3">Ok!</a>
+      </div>
+    </div>
+  </div>
+  <div class="question-container" id='next4' data-prev='#next3' data-next='#create_hedgie'>
+    <div class="question-content">
+      <div>
+        Set a playdate limit for your hedgie.
+      </div>
+      <div class='question-input-container'>
+        <%= f.input :price, class: "new_hedgie_input", placeholder: '‎2 days', label: false %>
+      </div>
+      <div class='question-next-button'>
+        <a href='#summary' id="button4">Ok!</a>
+      </div>
+    </div>
+  </div>
+  <div class="question-container" id='create_hedgie' data-prev='#next4'>
+    <div class="question-content">
+      <div class='question-input-container'>
+      </div>
+      <div class='question-next-button'>
+        <%= f.submit "See my hedgie!", class: "hedgie_submit" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<%= content_for :after_js do %>
+  <script>
+    document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
+  </script>
+<% end %>
+
