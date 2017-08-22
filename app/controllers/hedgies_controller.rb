@@ -59,6 +59,6 @@ class HedgiesController < ApplicationController
   end
 
   def hedgie_params
-    params.require(:hedgie).permit(:name, :description, :price, :min_booking, :photo)
+    params.require(:hedgie).permit(:name, :description, :price, :min_booking, photos: [])
   end
 end

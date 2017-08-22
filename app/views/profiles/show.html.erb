@@ -27,8 +27,8 @@
         </div>
         <div class="photo">
 
-          <% if hedgie.photo? %>
-          <%= cl_image_tag hedgie.photo.path, width: 300, height: 200, crop: :fill %>
+          <% if hedgie.photos? %>
+          <%= cl_image_tag hedgie.photos.first.path, width: 300, height: 200, crop: :fill %>
           <% end %>
         </div>
         <div class="description">
