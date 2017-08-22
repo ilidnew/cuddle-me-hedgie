@@ -8,7 +8,25 @@
       <%= current_user.last_name %>
     </li>
     <li>
-      <%= @user.email %>
+      <%= current_user.email %>
     </li>
   </ul>
 </div>
+<div>
+<% @hedgies.each do |hedgie| %>
+<div>
+<li>
+  <%= link_to hedgie.name , hedgie_path(hedgie) %>
+
+  <%= hedgie.description %>
+  <%= link_to "Edit", edit_hedgie_path(hedgie) %>
+  <%= link_to "Delete", hedgie_path(hedgie),
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>
+</div>
+<% end %>
+</li>
+
+
+
+

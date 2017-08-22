@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :hedgies, only: [:create, :search]
-  resources :hedgies, only: [:new, :show], as: :hedgie
+  resources :hedgies, only: [:create, :search, :destroy]
+  resources :hedgies, only: [:new, :show, :edit, :update, :destroy], as: :hedgie
 end
