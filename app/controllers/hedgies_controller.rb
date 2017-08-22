@@ -13,7 +13,7 @@ class HedgiesController < ApplicationController
   def create
     @hedgie = Hedgie.new(hedgie_params)
     @hedgie.user = current_user
-    if @hedgie.save  dads
+    if @hedgie.save
       redirect_to profile_path(@user)
     else
       render :new
