@@ -14,6 +14,9 @@ gem 'devise'
 # Facebook authentication
 gem 'omniauth-facebook'
 
+# swipebox
+gem 'swipebox'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'

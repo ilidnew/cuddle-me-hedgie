@@ -2,6 +2,5 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require swipebox
 //= require_tree .
-
-
