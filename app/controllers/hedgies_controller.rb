@@ -44,8 +44,7 @@ class HedgiesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_path, alert: 'hedgie was successfully delete.' }
       format.json { head :no_content }
-  end
-
+    end
   end
 
   def search_by_attr

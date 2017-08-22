@@ -19,9 +19,10 @@
         </li>
       </ul>
     </div>
-    <div>
+    <div class="container">
+    <div class="row">
       <% @hedgies.each do |hedgie| %>
-      <div>
+      <div class="col-xs-6">
         <div class="name">
           <%= link_to hedgie.name , hedgy_path(hedgie) %>
         </div>
@@ -39,12 +40,18 @@
           <%= link_to "Delete", hedgy_path(hedgie),
           method: :delete,
           data: { confirm: "Are you sure?" } %>
+          <%= link_to "Add new hedgie", new_hedgy_path %>
         </div>
+      </div>
+      <div class="col-xs-6">
+        <h1><%= hedgie.name %>'s Bookings</h1>
+
       </div>
       <% end %>
     </div>
-  </div>
 
+  </div>
+</div>
 
 
 

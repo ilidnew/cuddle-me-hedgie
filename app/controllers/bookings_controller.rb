@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+  def index
+
+  end
 
   def new
     @hedgy = Hedgie.find(params[:hedgy_id])
