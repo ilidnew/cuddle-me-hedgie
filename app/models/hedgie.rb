@@ -1,4 +1,4 @@
 class Hedgie < ApplicationRecord
   belongs_to :user
-  has_attachment :photo
+  has_attachments :photos, maximum: 5
 end

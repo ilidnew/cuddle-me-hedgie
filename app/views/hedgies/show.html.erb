@@ -1,1 +1,30 @@
-<%= @hedgie.name %>
+<div class="banner">
+  <div class="row" align="center">
+    <% if @hedgie.photos? %>
+      <% @hedgie.photos.each_with_index do |photo, idx| %>
+        <%= link_to cl_image_path(photo.path, width: 600, height: 600, crop: :fill), class: "swipebox" do %>
+          <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <div class="card">
+        <img src="http://lorempixel.com/300/200/people/1" alt="image">
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <h1>This is <%= @hedgie.name %></h1>
+      <p><%= @hedgie.name %>'s description</p>
+      <h1><%= @hedgie.name %>'s owner is <%= @hedgie.user.first_name %> <%= @hedgie.user.last_name %></h1>
+      <p><%= @hedgie.user.first_name %> intro</p>
+    </div>
+    <div class="col-xs-4">
+      <h1>Price to rent <%= @hedgie.name %></h1>
+      <p><%= @hedgie.price %></p>
+      <%= link_to "Book #{@hedgie.name}", new_booking_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
