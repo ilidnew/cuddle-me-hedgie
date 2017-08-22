@@ -1,15 +1,15 @@
 <div class="banner">
   <div class="row" align="center">
     <% if @hedgie.photos? %>
-      <% @hedgie.photos.each_with_index do |photo, idx| %>
-        <%= link_to cl_image_path(photo.path, width: 600, height: 600, crop: :fill), class: "swipebox" do %>
-          <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
-        <% end %>
-      <% end %>
+    <% @hedgie.photos.each_with_index do |photo, idx| %>
+    <%= link_to cl_image_path(photo.path, width: 600, height: 600, crop: :fill), class: "swipebox" do %>
+    <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
+    <% end %>
+    <% end %>
     <% else %>
-      <div class="card">
-        <img src="http://lorempixel.com/300/200/people/1" alt="image">
-      </div>
+    <div class="card">
+      <img src="http://lorempixel.com/300/200/people/1" alt="image">
+    </div>
     <% end %>
   </div>
 </div>
@@ -22,9 +22,16 @@
       <p><%= @hedgie.user.first_name %> intro</p>
     </div>
     <div class="col-xs-4">
-      <h1>Price to rent <%= @hedgie.name %></h1>
-      <p><%= @hedgie.price %></p>
-      <%= link_to "Book #{@hedgie.name}", new_hedgy_booking_path(@hedgie), class: "btn btn-primary" %>
+      <h1>Book playtime with <%= @hedgie.name %></h1>
+      <%= simple_form_for([@hedgie, @booking]) do |f| %>
+      <%= f.input :start_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+      <%= f.input :end_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+      <br>
+      <p>Total days: <span id="number-of-days">0</span></p>
+      <p>Price per day: €<span id="price-per-day"><%= @hedgie.price %></span></p>
+      <p>Total price to rent <%= @hedgie.name %>: €<span id="total-price">0</span></p>
+      <%= f.button :submit, "Book #{@hedgie.name}", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
