@@ -25,7 +25,6 @@ class ReviewsController < ApplicationController
 
   def set_review
     @review = Review.find(params[:hedgie_id])
-
   end
 
   def review_params
