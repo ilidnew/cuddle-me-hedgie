@@ -23,6 +23,7 @@ class HedgiesController < ApplicationController
   def show
     @hedgie = Hedgie.find(params[:id])
     @hedgies = Hedgie.all
+    @booking = Booking.new
   end
 
   def edit
