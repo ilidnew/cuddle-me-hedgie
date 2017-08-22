@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   resources :hedgies, only: [:create, :search, :destroy]
   resources :hedgies, only: [:new, :show, :edit, :update, :destroy], as: :hedgie
+  mount Attachinary::Engine => "/attachinary"
 end
