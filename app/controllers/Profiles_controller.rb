@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   def show
     @user = current_user
     @hedgies = Hedgie.all
-    # .where(user: current_user)
+    #.where(user: current_user)
   end
 
   def edit

@@ -11,7 +11,8 @@
   hedgie = Hedgie.new(
     user: User.last,
     name: Faker::Name.title,
-    description: Faker::Lorem.paragraph
+    description: Faker::Lorem.paragraph,
+    address: Faker::Address.city
   )
   hedgie.save
 end
