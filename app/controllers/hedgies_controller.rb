@@ -13,7 +13,7 @@ class HedgiesController < ApplicationController
   def create
     @hedgie = Hedgie.new(hedgie_params)
     @hedgie.user = current_user
-    if @hedgie.save
+    if @hedgie.save  dads
       redirect_to profile_path(@user)
     else
       render :new
@@ -59,6 +59,6 @@ class HedgiesController < ApplicationController
   end
 
   def hedgie_params
-    params.require(:hedgie).permit(:name, :description, :price, :min_booking)
+    params.require(:hedgie).permit(:name, :description, :price, :min_booking, :photo)
   end
 end
