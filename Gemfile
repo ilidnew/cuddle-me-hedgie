@@ -14,6 +14,20 @@ gem 'devise'
 # Facebook authentication
 gem 'omniauth-facebook'
 
+# swipebox
+gem 'swipebox'
+
+#storing pictures
+gem 'cloudinary', '1.1.7'
+#uploading pictures
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+
+gem 'coffee-rails'
+
+#adding fake seeds
+gem 'faker'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'

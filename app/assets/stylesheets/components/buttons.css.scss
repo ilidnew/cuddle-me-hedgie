@@ -1,0 +1,64 @@
+ .home-button-green {
+    transition: background-color .2s ease-out;
+    background: hsla(0,0%,100%,.1);
+    border: 2px solid #59d67d;
+    border-radius: 3px;
+    color: #59d67d;
+    display: inline-block;
+    font-weight: 500;
+    padding: 4px 25px;
+    height: 68px;
+    line-height: 55px;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+  }
+
+ .home-button-green:hover {
+    background-color: #59d67d;
+    color: #fff;
+  }
+
+ .home-button-grey {
+    transition: background-color .2s ease-out;
+    background: hsla(0,0%,100%,.1);
+    border: 2px solid #7f7f7f;
+    border-radius: 3px;
+    color: #7f7f7f;
+    display: inline-block;
+    font-weight: 500;
+    padding: 4px 25px;
+    height: 68px;
+    line-height: 55px;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 161px;
+  }
+
+ .home-button-grey:hover {
+    border: 2px solid #59d67d;
+  }
+
+ .home-button-grey-search {
+    transition: background-color .2s ease-out;
+    background: hsla(0,0%,100%,.1);
+    border: 2px solid #7f7f7f;
+    border-radius: 3px;
+    color: #7f7f7f;
+    display: inline-block;
+    font-weight: 500;
+    padding: 4px 25px;
+    height: 68px;
+    line-height: 55px;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 211px;
+  }
+
+  .home-button-grey-search:hover {
+    border: 2px solid #59d67d;
+  }
+
