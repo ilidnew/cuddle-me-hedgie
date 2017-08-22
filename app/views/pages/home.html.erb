@@ -1,34 +1,46 @@
-<br>
-<form action="">
+  <%= render 'shared/banner' %>
+<div class="home-banner ">
+  <form action="" class="banner-search">
 
-  <div class="form-inline home-search">
-    <input type="text" class="home-button-grey-search" placeholder="Where">
+    <div class="form-inline home-search">
+      <input type="text" class="home-button-grey-search" placeholder="Where">
 
-    <input type="text" class="home-button-grey datepicker" placeholder="Start Date">
+      <input type="text" class="home-button-grey datepicker" placeholder="Start Date">
 
-    <input type="text" class="home-button-grey datepicker" placeholder="End Date">
+      <input type="text" class="home-button-grey datepicker" placeholder="End Date">
 
-    <div class="btn-group">
-      <button class="home-button-grey btn-secondary  dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Character <i class="fa fa-angle-down" aria-hidden="true"></i>
+      <div class="btn-group">
+        <button class="home-button-grey btn-secondary  dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Character <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="#">Something</a></li>
+            <li><a href="#">Something</a></li>
+            <li><a href="#">Something</a></li>
+          </ul>
+      </div>
+
+      <button class="home-button-green">
+        Find Hedgie
       </button>
-        <ul class="dropdown-menu dropdown-menu-right">
-          <li><a href="#">Something</a></li>
-          <li><a href="#">Something</a></li>
-          <li><a href="#">Something</a></li>
-        </ul>
+
+
     </div>
 
-    <button class="home-button-green">
-      Find Hedgie
-    </button>
+  </form>
 
 
-  </div>
-
-</form>
+</div>
 
 
+
+
+
+
+<div class="container-fluid">
+
+
+</div>
 
     <h1>Trending Hedgehogs</h1>
 
