@@ -28,9 +28,15 @@ gem 'coffee-rails'
 #adding fake seeds
 gem 'faker'
 
+#maps
+gem "geocoder"
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+
+#maps
+
 gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
