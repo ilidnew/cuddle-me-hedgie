@@ -4,7 +4,7 @@
 <%= f.input :last_name %>
 <%= f.submit :sub %>
 <% end %>
-
+<%= link_to "Cancel my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete %>
 
 
 
