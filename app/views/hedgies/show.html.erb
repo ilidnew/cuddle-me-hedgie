@@ -24,7 +24,7 @@
     <div class="col-xs-4">
       <h1>Price to rent <%= @hedgie.name %></h1>
       <p><%= @hedgie.price %></p>
-      <%= link_to "Book #{@hedgie.name}", new_booking_path, class: "btn btn-primary" %>
+      <%= link_to "Book #{@hedgie.name}", new_hedgy_booking_path(@hedgie), class: "btn btn-primary" %>
     </div>
   </div>
 </div>

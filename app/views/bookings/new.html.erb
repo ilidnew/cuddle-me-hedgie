@@ -1,10 +1,7 @@
-<form method="post">
-  <div class="form-group"> <!-- Date input -->
-    <label class="control-label" for="date">Date</label>
-    <%= simple_form_for(@booking) do |f| %>
-    <%= f.input :start_date, as: :string, input_html: { class: "datepicker"} %>
-    <%= f.input :end_date, as: :string, input_html: { class: "datepicker"} %>
-    <%= f.button :submit, class: "btn btn-primary"  %>
-    <% end %>
-  </div>
-</form>
+<h1>Book playtime with <%= @hedgy.name %></h1>
+<%= simple_form_for([@hedgy, @booking]) do |f| %>
+<%= f.input :start_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+<%= f.input :end_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
+
+<%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

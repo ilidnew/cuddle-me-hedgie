@@ -32,7 +32,7 @@ class HedgiesController < ApplicationController
     @user = @hedgie.user
     @hedgie.update(hedgie_params)
     if @hedgie.save
-      redirect_to hedgie_path(@hedgie), notice:"hedgie created successfully."
+      redirect_to hedgy_path(@hedgie), notice:"hedgie created successfully."
     else
       render :new, alert: "Error creating hedgie."
     end
@@ -59,6 +59,6 @@ class HedgiesController < ApplicationController
   end
 
   def hedgie_params
-    params.require(:hedgie).permit(:name, :description, :price, :min_booking, photos: [])
+    params.require(:hedgie).permit(:name, :description, :price, :min_booking, :hedgy_id, photos: [])
   end
 end
