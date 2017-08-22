@@ -19,33 +19,40 @@
         </li>
       </ul>
     </div>
-    <div>
-      <% @hedgies.each do |hedgie| %>
-      <div>
-        <div class="name">
-          <%= link_to hedgie.name , hedgy_path(hedgie) %>
-        </div>
-        <div class="photo">
+    <% @hedgies.each do |hedgie| %>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="name">
+            <%= link_to hedgie.name , hedgy_path(hedgie) %>
+          </div>
+          <div class="photo">
 
-          <% if hedgie.photos? %>
-          <%= cl_image_tag hedgie.photos.first.path, width: 300, height: 200, crop: :fill %>
+            <% if hedgie.photos? %>
+
+            <%= cl_image_tag hedgie.photos.first.path, width: 300, height: 200, crop: :fill %>
+            <% end %>
+          </div>
+          <div class="description">
+            <%= hedgie.description %>
+          </div>
+          <div class="list">
+            <%= link_to "Edit", edit_hedgy_path(hedgie) %>
+            <%= link_to "Delete", hedgy_path(hedgie),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <h1><%= hedgie.name %>'s Bookings</h1>
+          <% hedgie.bookings.each do |booking| %>
+            <p><%= booking.user.first_name %> booked <%= hedgie.name %> for <%= booking.start_date %> to <%= booking.end_date %></p>
           <% end %>
         </div>
-        <div class="description">
-          <%= hedgie.description %>
-        </div>
-        <div class="list">
-          <%= link_to "Edit", edit_hedgy_path(hedgie) %>
-          <%= link_to "Delete", hedgy_path(hedgie),
-          method: :delete,
-          data: { confirm: "Are you sure?" } %>
-        </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
+<%= link_to "Add new hedgie", new_hedgy_path %>
   </div>
-
-
+</div>
 
 
 

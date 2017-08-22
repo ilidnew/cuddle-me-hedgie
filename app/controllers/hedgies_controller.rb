@@ -14,7 +14,7 @@ class HedgiesController < ApplicationController
     @hedgie = Hedgie.new(hedgie_params)
     @hedgie.user = current_user
     if @hedgie.save
-      redirect_to profile_path(@user)
+      redirect_to profile_path(@hedgie.user)
     else
       render :new
     end
@@ -42,10 +42,9 @@ class HedgiesController < ApplicationController
     @hedgie = Hedgie.find(params[:id])
     @hedgie.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, alert: 'hedgie was successfully delete.' }
+      format.html { redirect_to profile_path, alert: 'hedgie was successfully deleted.' }
       format.json { head :no_content }
-  end
-
+    end
   end
 
   def search_by_attr

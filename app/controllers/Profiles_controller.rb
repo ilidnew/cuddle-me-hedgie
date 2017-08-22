@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
-    @hedgies = Hedgie.all
+    @hedgies = Hedgie.where(user_id: current_user.id)
     # .where(user: current_user)
   end
 
