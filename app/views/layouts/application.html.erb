@@ -11,9 +11,7 @@
 <body>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
-  <div class="container-fluid">
     <%= yield %>
-  </div>
   <%= javascript_include_tag 'application' %>
   <%= cloudinary_js_config %>
 </body>
