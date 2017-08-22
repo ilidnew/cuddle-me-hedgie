@@ -6,3 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+10.times do
+
+  hedgie = Hedgie.new(
+    user: User.last,
+    name: Faker::Name.title,
+    description: Faker::Lorem.paragraph
+  )
+  hedgie.save
+end

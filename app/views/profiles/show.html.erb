@@ -1,14 +1,54 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="user-info">
+      <ul>
+        <li>
+        <h3>
+            <%= current_user.first_name %>
+            </h3>
+        </li>
+        <li>
+        <h3>
+            <%= current_user.last_name %>
+            </h3>
+        </li>
+        <li>
+        <h3>
+            <%= current_user.email %>
+            </h3>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <% @hedgies.each do |hedgie| %>
+      <div>
+        <div class="name">
+          <%= link_to hedgie.name , hedgie_path(hedgie) %>
+        </div>
+        <div class="photo">
 
-<div>
-  <ul>
-    <li>
-      <%= current_user.first_name %>
-    </li>
-    <li>
-      <%= current_user.last_name %>
-    </li>
-    <li>
-      <%= @user.email %>
-    </li>
-  </ul>
-</div>
+          <% if hedgie.photo? %>
+          <%= cl_image_tag hedgie.photo.path, width: 300, height: 200, crop: :fill %>
+          <% end %>
+        </div>
+        <div class="description">
+          <%= hedgie.description %>
+        </div>
+        <div class="list">
+          <%= link_to "Edit", edit_hedgie_path(hedgie) %>
+          <%= link_to "Delete", hedgie_path(hedgie),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
