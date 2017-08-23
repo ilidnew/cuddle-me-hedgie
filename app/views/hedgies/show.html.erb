@@ -1,40 +1,45 @@
-<div class="show-banner">
-  <div class="row" align="center">
-    <% if @hedgie.photos? %>
-    <% @hedgie.photos.each_with_index do |photo, idx| %>
-    <%= link_to cl_image_path(photo.path, width: 600, height: 400, crop: :fill), class: "swipebox show-banner" do %>
-    <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
-    <% end %>
-    <% end %>
-    <% else %>
-    <div class="show-banner">
-      <img src="http://lorempixel.com/600/400/people/1" alt="image" class="show-banner"=>
-    </div>
-    <% end %>
-  </div>
-</div>
-<br>
 <div class="container-fluid">
   <div class="row ">
     <div class="col-xs-8 hedgie-input">
-      <h1>This is <%= @hedgie.name %></h1>
+      <% if @hedgie.photos? %>
+      <% @hedgie.photos.each_with_index do |photo, idx| %>
+      <%= link_to cl_image_path(photo.path, width: 600, height: 400, crop: :fill), class: "swipebox show-banner" do %>
+      <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
+      <% end %>
+      <% end %>
+      <% else %>
+      <div class="show-banner">
+        <img src="http://lorempixel.com/600/400/people/1" alt="image" class="show-banner"=>
+      </div>
+      <% end %>
+          <h1>This is <%= @hedgie.name %></h1>
       <p><%= @hedgie.description %></p>
     </div>
     <div class="col-xs-4 submit-field">
-      <h1>Book playtime with <%= @hedgie.name %></h1>
+      <h1 class= "book-box-color">Book playtime with <%= @hedgie.name %></h1>
       <div class="hedgie-input-forms">
-      <%= simple_form_for([@hedgie, @booking]) do |f| %>
-      <%= f.input :start_date, as: :string, input_html: { class: "hedgie-button-grey datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
-      <br>
-      <%= f.input :end_date, as: :string, input_html: { class: "hedgie-button-grey datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
-      <br>
-      <p>Total days: <span id="number-of-days">0</span></p>
-      <p>Price per day: €<span id="price-per-day"><%= @hedgie.price %></span></p>
-      <p>Total price to rent <%= @hedgie.name %>: €<span id="total-price">0</span></p>
-      <%= f.button :submit, "Book #{@hedgie.name}", class: "home-button-green"%>
-      <% end %>
-      <br>
+        <%= simple_form_for([@hedgie, @booking]) do |f| %>
+        <div class="form-inline">
+        <%= f.input :start_date, as: :string, placeholder: "Start date", label: false, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+        <%= f.input :end_date, as: :string, placeholder: "End date", label: false, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+        </div>
+        <br>
+        <p>Total days: <span id="number-of-days">0</span></p>
+        <p>Price per day: €<span id="price-per-day"><%= @hedgie.price %></span></p>
+        <p>Total price to rent <%= @hedgie.name %>: €<span id="total-price">0</span></p>
+        <%= f.button :submit, "Book #{@hedgie.name}", class: "home-button-green text-center"%>
+        <% end %>
+        <br>
       </div>
     </div>
+  </div>
+</div>
+<br>
+<div class="show-banner">
+  <div class="row" >
+    <h1>This is <%= @hedgie.name %></h1>
+    <p class="padded-margin"><%= @hedgie.name %>'s description</p>
+    <h1><%= @hedgie.name %>'s owner is <%= @hedgie.user.first_name %> <%= @hedgie.user.last_name %></h1>
+    <p class="padded-margin"><%= @hedgie.user.first_name %> intro</p>
   </div>
 </div>
