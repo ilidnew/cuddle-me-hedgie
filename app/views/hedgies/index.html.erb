@@ -11,7 +11,9 @@
 
      <% @hedgies.each do |hedgie| %>
      <div class="col-xs-6">
-      <%= hedgie.name %>
+
+     <%= link_to hedgie.name, hedgy_path(hedgie) %>
+
       <% if hedgie.photos? %>
       <%= cl_image_tag hedgie.photos.first.path, width: 200, height: 150, crop: :fill %>
       <% end %>
@@ -21,9 +23,6 @@
    </div>
    <% end %>
  </div>
-
-
-
 
   <div class="col-xs-6">
 
