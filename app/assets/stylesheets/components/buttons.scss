@@ -40,6 +40,7 @@
 
  .home-button-grey:hover {
     border: 2px solid #59d67d;
+    text-decoration: none;
   }
 
  .home-button-grey-search {
@@ -61,5 +62,31 @@
 
   .home-button-grey-search:hover {
     border: 2px solid #59d67d;
+    text-decoration: none;
   }
+
+
+ .hedgie-button-grey {
+    transition: background-color .2s ease-out;
+    background: hsla(0,0%,100%,.1);
+    border: 2px solid #616668;
+    border-radius: 3px;
+    color: #616668;
+    display: inline-block;
+    font-weight: 500;
+    padding: 4px 25px;
+    height: 68px;
+    line-height: 55px;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 161px;
+  }
+
+ .hedgie-button-grey:hover {
+    border: 2px solid #616668;
+    color: #616668;
+    text-decoration: none;
+  }
+
 
