@@ -11,9 +11,14 @@
   align-items: center;
   justify-content: center;
   height: 40vh;
-
 }
 
 ::-webkit-input-placeholder {
   color: white;
 }
+
+.datepicker.dropdown-menu {
+  background-color:white;
+  color: $green;
+}
+
