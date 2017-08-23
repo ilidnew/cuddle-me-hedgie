@@ -24,7 +24,6 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 
 
-
 #adding fake seeds
 gem 'faker'
 
