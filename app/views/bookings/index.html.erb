@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+  <div class="title">
+    <h1>Your Hedgie Playtimes</h1>
+  </div>
+    <% @bookings.each do |booking| %>
+      <div class="col-xs-12 col-sm-4">
+          <%= cl_image_tag booking.hedgie.photos.first.path, width: 400, height: 300, crop: :fill, class: "photo" %>
+          <div class="info">
+            <p><%= link_to booking.hedgie.name, hedgy_path(booking.hedgie) %></p>
+            <p>Playtime booked: <%= booking.start_date %> to <%= booking.end_date %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+  </div>
+</div>
