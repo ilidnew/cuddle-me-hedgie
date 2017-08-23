@@ -33,8 +33,19 @@
 }
 
 .card-description {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
-  bottom: 5px;
+  bottom: 20px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    margin-top: 10px;
+  };
 }
 
 .card-title {
