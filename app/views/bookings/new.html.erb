@@ -4,7 +4,6 @@
 <h1>Book playtime with <%= @hedgie.name %></h1>
 <%= simple_form_for([@hedgie, @booking]) do |f| %>
 <%= f.input :start_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
-<%= f.input  %>
 <%= f.input :end_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
 <br>
 <p>Total days: <span id="number-of-days">0</span></p>

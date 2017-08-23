@@ -12,15 +12,6 @@ class HedgiesController < ApplicationController
     end
   end
 
-  def search
-  @hedgies = Hedgies.all  # this is your "list all" that we trigger if request comes to `/hedgies`
-  if params[:address]  # what if we got a query string in the request path? Overwrite our @hedgies!
-    @hedgies = Hedgies.near(address: params[:address], 5) # the hardest part here is coming up with a good DB query.
-  end
- end
-
-  end
-
   def new
     @hedgie = Hedgie.new
   end
