@@ -17,17 +17,30 @@
   margin-bottom: 15px;
   line-height: 1.45;
   box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
-  border-radius: 2px;
+  border-radius: 5px;
   height: 300px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-
 }
 
 .card-description {
   position: absolute;
   bottom: 5px;
+}
+
+.card-title {
+  font-size: xx-large;
+}
+
+h1 {
+  color: #59D67D;
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+
+.padded-margin {
+  margin: 0 70px;
 }
