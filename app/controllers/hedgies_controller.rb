@@ -3,22 +3,15 @@ class HedgiesController < ApplicationController
   before_action :set_hedgie, only: [:edit, :update, :destroy]
 
   def index
-    @hedgie = params[:search]
     @hedgies = Hedgie.where.not(latitude: nil, longitude: nil)
+    if params[:address]
+      @hedgies = @hedgies.near(params[:address], 10)
+    end
     @hash = Gmaps4rails.build_markers(@hedgies) do |hedgie, marker|
       marker.lat hedgie.latitude
       marker.lng hedgie.longitude
       # marker.infowindow render_to_string(partial: "/hedgies/map_box", locals: { hedgie: hedgie })
     end
-  end
-
-  def search
-  @hedgies = Hedgies.all  # this is your "list all" that we trigger if request comes to `/hedgies`
-  if params[:address]  # what if we got a query string in the request path? Overwrite our @hedgies!
-    @hedgies = Hedgies.near(address: params[:address], 5) # the hardest part here is coming up with a good DB query.
-  end
- end
-
   end
 
   def new
@@ -61,10 +54,6 @@ class HedgiesController < ApplicationController
       format.html { redirect_to profile_path, alert: 'hedgie was successfully deleted.' }
       format.json { head :no_content }
     end
-  end
-
-  def search_by_attr
-    @hedgies = Hedgie.find(params[:attr])
   end
 
   private

@@ -1,9 +1,16 @@
+
 <div class="row">
   <div class="col-xs-6">
     <div class="all-hedgies">
+    <form action="/hedgies" action="GET">
+ <input type="text" name="address">
+ <input type="submit">
+</form>
+<%= link_to "Back to all hedgies", hedgies_path %>
       <% @hedgies.each do |hedgie| %>
       <div class="col-xs-12">
       <%= hedgie.name %>
+      <%= hedgie.photos.first %>
       <div class="info">
          <%= hedgie.address %>
          </div>
@@ -35,9 +42,4 @@
 </div>
 </div>
 
-
-<form action="/hedgies" action="GET" method="search">
- <input type="text" name="address">
- <input type="submit">
-</form>
 
