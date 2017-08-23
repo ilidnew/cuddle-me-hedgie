@@ -1,25 +1,29 @@
 .show-banner img {
   box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
   border-radius: 5px;
-  display: flex ;
-  align-items: center;
-  justify-content: center;
   margin-top: 20px;
+  height: 550px;
 }
-
 
 .hedgie-input p {
   padding-left: 30px;
-
 }
 
 .hedgie-input-forms {
   padding-left: 30px;
-
 }
 
 .submit-field {
   box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
   border-radius: 5px;
-  background: #ffd559
+  background: rgba(89, 214, 125, 0.3);
+  height: 425px;
+  padding: 10px;
+  margin: 15px -15px;
 }
+
+.book-box-color {
+ color: $blue;
+}
+
+
