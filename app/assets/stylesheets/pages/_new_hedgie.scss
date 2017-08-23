@@ -3,16 +3,21 @@
 
 }
 
+.new_hedgie_input {
+  color: red !important;
+}
+
 .form-control {
   &:focus {
     outline: 0;
     border: 1px solid #ccc;
     box-shadow: none;
   }
+    color: #F4F4F4;
 }
 
 .questions-container {
-  background: $green;
+  background: rgba(89, 214, 125, 0.8);
   color: white;
 }
 
@@ -27,6 +32,7 @@
   font-size: 25px;
   max-width: 400px;
   padding: 20px;
+  padding-bottom: 150px;
 
   .no-highlight {
     opacity: .6;
