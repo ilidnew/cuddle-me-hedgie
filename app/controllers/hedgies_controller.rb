@@ -3,7 +3,14 @@ class HedgiesController < ApplicationController
   before_action :set_hedgie, only: [:edit, :update, :destroy]
 
   def index
-    @hedgies = Hedgie.all
+    @hedgie = params[:search]
+    @hedgies = Hedgie.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@hedgies) do |hedgie, marker|
+      marker.lat hedgie.latitude
+      marker.lng hedgie.longitude
+      # marker.infowindow render_to_string(partial: "/hedgies/map_box", locals: { hedgie: hedgie })
+    end
   end
 
   def new
