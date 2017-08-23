@@ -1,16 +1,26 @@
 <%= render 'shared/banner' %>
 
-<div class="container-fluid">
-  <h1><strong>Trending Hedgehogs</strong> </h1>
-  <div class="row padded-margin">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/luenne/image/upload/v1503423810/Screen-Shot-2017-08-22-at-19.39.18_gkzkfr.jpg');">
-        <div class="card-description">
-          <p class="card-title">Lay Zee</p>
+
+  <div class="container-fluid">
+    <h1>Trending Hedgehogs</h1>
+
+    <div class="row">
+      <% @hedgies.each do |hedgie| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/luenne/image/upload/v1503423810/Screen-Shot-2017-08-22-at-19.39.18_gkzkfr.jpg');">
+        <% if hedgie.photos? %>
+         <%= cl_image_tag hedgie.photos.path, width: 400, height: 200, crop: :fill %>
+         <% end %>
+         <div class="card-description">
+          <h2><%= link_to hedgie.name, hedgy_path(hedgie) %></h2>
+
         </div>
         <a class="card-link" href="#"></a>
       </div>
     </div>
+
+<% end %>
+
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/luenne/image/upload/v1503423810/Screen-Shot-2017-08-22-at-19.38.40_wncj4c.jpg');">
         <div class="card-description">
@@ -27,8 +37,15 @@
         <a class="card-link" href="#"></a>
       </div>
     </div>
+
   </div>
 </div>
+
+
+
+
+
+
 
 
 
