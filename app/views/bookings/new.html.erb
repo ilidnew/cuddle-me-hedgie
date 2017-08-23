@@ -1,7 +1,17 @@
-<h1>Book playtime with <%= @hedgy.name %></h1>
-<%= simple_form_for([@hedgy, @booking]) do |f| %>
-<%= f.input :start_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-<%= f.input :end_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y')} %>
-
+<div class="container">
+<div class="row">
+<div class="col-xs-6 col-xs-offset-3">
+<h1>Book playtime with <%= @hedgie.name %></h1>
+<%= simple_form_for([@hedgie, @booking]) do |f| %>
+<%= f.input :start_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+<%= f.input  %>
+<%= f.input :end_date, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+<br>
+<p>Total days: <span id="number-of-days">0</span></p>
+<p>Price per day: €<span id="price-per-day"><%= @hedgie.price %></span></p>
+<p>Total price to rent <%= @hedgie.name %>: €<span id="total-price">0</span></p>
 <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
+</div>
+</div>
+</div>
