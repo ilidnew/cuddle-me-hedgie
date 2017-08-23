@@ -5,7 +5,6 @@ class HedgiesController < ApplicationController
   def index
     @hedgie = params[:search]
     @hedgies = Hedgie.where.not(latitude: nil, longitude: nil)
-
     @hash = Gmaps4rails.build_markers(@hedgies) do |hedgie, marker|
       marker.lat hedgie.latitude
       marker.lng hedgie.longitude
