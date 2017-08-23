@@ -1,23 +1,30 @@
+<div class="container">
 
-<div class="row">
   <div class="col-xs-6">
     <div class="all-hedgies">
-    <form action="/hedgies" action="GET">
- <input type="text" name="address">
- <input type="submit">
-</form>
-<%= link_to "Back to all hedgies", hedgies_path %>
-      <% @hedgies.each do |hedgie| %>
-      <div class="col-xs-12">
+      <form action="/hedgies" action="GET">
+       <input type="text" name="address">
+       <input type="submit" class="btn btn-warning">
+        <%= link_to "Back to all hedgies", hedgies_path, class: "btn btn-warning" %>
+     </form>
+     </div>
+
+     <% @hedgies.each do |hedgie| %>
+     <div class="col-xs-6">
       <%= hedgie.name %>
-      <%= hedgie.photos.first %>
-      <div class="info">
-         <%= hedgie.address %>
-         </div>
-      </div>
+      <% if hedgie.photos? %>
+      <%= cl_image_tag hedgie.photos.first.path, width: 200, height: 150, crop: :fill %>
       <% end %>
-    </div>
-  </div>
+      <div>
+       <%= hedgie.address %>
+     </div>
+   </div>
+   <% end %>
+ </div>
+
+
+
+
   <div class="col-xs-6">
 
     <div id="map" style="width: 100%; height: 600px;">
@@ -40,6 +47,6 @@
 <% end %>
 </div>
 </div>
+
+
 </div>
-
-
