@@ -48,11 +48,17 @@ ActiveRecord::Schema.define(version: 20170824141626) do
     t.integer  "price"
     t.integer  "min_booking"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "toy",         default: false
+    t.boolean  "food",        default: false
+    t.boolean  "bed",         default: false
+    t.boolean  "comb",        default: false
+    t.boolean  "poo",         default: false
+    t.boolean  "bowl",        default: false
     t.index ["user_id"], name: "index_hedgies_on_user_id", using: :btree
   end
 
