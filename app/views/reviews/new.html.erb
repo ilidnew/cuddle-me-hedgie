@@ -1,0 +1,9 @@
+<h1>IM THE NEW FOR REVIEWS</h1>
+
+
+<%= simple_form_for([@booking, @review]) do |f| %>
+  <%= f.input :content, as: :text %>
+  <%= f.input :rating %>
+  <%= f.button :submit, 'Send!', class: 'btn btn-primary' %>
+<% end %>
+

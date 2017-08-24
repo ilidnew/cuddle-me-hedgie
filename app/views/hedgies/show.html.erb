@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="row ">
     <div class="col-xs-8 hedgie-input">
+
       <% if @hedgie.photos? %>
       <% @hedgie.photos.each_with_index do |photo, idx| %>
       <%= link_to cl_image_path(photo.path, width: 600, height: 400, crop: :fill), class: "swipebox show-banner" do %>
@@ -15,6 +16,7 @@ http://res.cloudinary.com/luenne/image/upload/c_scale,h_400,w_600/v1503423810/Sc
       <% end %>
           <h1>This is <%= @hedgie.name %></h1>
       <p><%= @hedgie.description %></p>
+
     </div>
     <div class="col-xs-4 submit-field">
       <h1 class= "book-box-color">Book playtime with <%= @hedgie.name %></h1>

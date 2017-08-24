@@ -7,7 +7,9 @@
     <div class="row padded-margin">
       <% @hedgies.each do |hedgie| %>
       <div class="col-xs-12 col-sm-4">
+
         <div class="card" style="background-color: rgba(89, 214, 125, 0.5)">
+
          <div class="card-description">
           <% if hedgie.photos? %>
             <%= cl_image_tag hedgie.photos.first.path, width: 350, height: 200, crop: :fill %>
