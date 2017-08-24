@@ -8,6 +8,7 @@
       <div class='question-input-container'>
         <%= f.input :name, class: "new_hedgie_input", placeholder: "Sammy the Hedgehog", label: false %>
       </div>
+      <br>
       <div class='question-next-button'>
         <a href='#next2' id="button1" >Ok!</a>
       </div>
@@ -21,6 +22,7 @@
       <div class='question-input-container'>
         <%= f.input :description, class: "new_hedgie_input", placeholder: "I love to cuddle!", label: false %>
       </div>
+      <br>
       <div class='question-next-button'>
         <a href='#next3' id="button2">Ok!</a>
       </div>
@@ -29,17 +31,37 @@
   <div class="question-container" id='next3' data-prev='#next2' data-next='#next4'>
     <div class="question-content">
       <div>
-        Set a daily price to play with your hedgie.
+        What accessories do your Hedgie come with?
       </div>
       <div class='question-input-container'>
-        <%= f.input :price, class: "new_hedgie_input", placeholder: '‎10€', label: false %>
+        <input type="checkbox" name="hedgie[food]" value="true">&nbsp;&nbsp;Food<br>
+        <input type="checkbox" name="hedgie[bed]" value="true">&nbsp;&nbsp;Bed<br>
+        <input type="checkbox" name="hedgie[comb]" value="true">&nbsp;&nbsp;Comb<br>
+        <input type="checkbox" name="hedgie[poo]" value="true">&nbsp;&nbsp;Poo Scooper<br>
+        <input type="checkbox" name="hedgie[toy]" value="true">&nbsp;&nbsp;Toy<br>
+        <input type="checkbox" name="hedgie[bowl]" value="true">&nbsp;&nbsp;Bowl<br>
       </div>
+      <br>
       <div class='question-next-button'>
         <a href='#next4' id="button3">Ok!</a>
       </div>
     </div>
   </div>
-  <div class="question-container" id='next4' data-prev='#next3' data-next='#create_hedgie'>
+  <div class="question-container" id='next4' data-prev='#next3' data-next='#next5'>
+    <div class="question-content">
+      <div>
+        Set a daily price to play with your hedgie.
+      </div>
+      <div class='question-input-container'>
+        <%= f.input :price, class: "new_hedgie_input", placeholder: '‎10€', label: false %>
+      </div>
+      <br>
+      <div class='question-next-button'>
+        <a href='#next5' id="button4">Ok!</a>
+      </div>
+    </div>
+  </div>
+    <div class="question-container" id='next5' data-prev='#next4' data-next='#create_hedgie'>
     <div class="question-content">
       <div>
         Set a playdate limit for your hedgie.
@@ -47,12 +69,13 @@
       <div class='question-input-container'>
         <%= f.input :price, class: "new_hedgie_input", placeholder: '‎2 days', label: false %>
       </div>
+      <br>
       <div class='question-next-button'>
-        <a href='#create_hedgie' id="button4">Ok!</a>
+        <a href='#create_hedgie' id="button5">Ok!</a>
       </div>
     </div>
   </div>
-  <div class="question-container" id='create_hedgie' data-prev='#next4'>
+  <div class="question-container" id='create_hedgie' data-prev='#next5'>
     <div class="question-content">
       <div class='question-input-container'>
       </div>
