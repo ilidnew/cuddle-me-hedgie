@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20170823182727) do
     t.integer  "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "rating"
+    t.integer  "rating"
     t.index ["booking_id"], name: "index_reviews_on_booking_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
