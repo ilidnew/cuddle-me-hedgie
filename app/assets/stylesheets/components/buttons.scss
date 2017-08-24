@@ -12,6 +12,7 @@
     font-size: 18px;
     margin-left: 5px;
     margin-right: 5px;
+    text-align: center;
 
   }
 
@@ -36,6 +37,7 @@
     margin-left: 5px;
     margin-right: 5px;
     width: 161px;
+    text-align: center;
   }
 
  .home-button-grey:hover {
@@ -81,6 +83,7 @@
     margin-left: 5px;
     margin-right: 5px;
     width: 161px;
+    text-align: center;
   }
 
  .hedgie-button-grey:hover {
@@ -88,5 +91,39 @@
     color: #616668;
     text-decoration: none;
   }
+
+  .small-button-green {
+    border: 2px solid #37a755;
+    display: inline-block;
+    font-size: 20px;
+    width: 165px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #37a755!important;
+    margin-left: 20px;
+    padding: 10px 30px;
+    border-radius: 3px;
+    transition: all .3s ease;
+    text-align: center;
+
+}
+
+  .small-button-green:hover {
+    background-color: #37a755;
+    color: #fff!important;
+    text-decoration: none;
+
+
+
+
+  }
+
+
+a {
+  text-decoration:none;
+
+  }
+
 
 
