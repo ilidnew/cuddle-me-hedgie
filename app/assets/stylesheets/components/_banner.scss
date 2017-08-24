@@ -23,3 +23,24 @@
 .mission-statement > h1 {
   color: $green;
 }
+
+.mission-statement {
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    padding-left: 0px;
+  }
+}
+.mission-statement p {
+  color: white;
+  font-size: 2em;
+  margin-bottom:1em;
+}
+.mission-statement h1 {
+  font-size: 4em;
+}
+
+.white-name > a {
+  color: white;
+}

@@ -1,1 +1,43 @@
+.profile-show-heading {
+  display: inline-flex;
+  align-items: center;
+}
+
+.small-button-green {
+  margin-top: 17px;
+}
+
+.line-seperator {
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGklEQVQYV2NkQAKMILb58tCZJyNXp4M5MAAARaUEBAzDuPsAAAAASUVORK5CYII=) repeat;
+  height: 1px;
+  width: auto;
+
+}
+
+
+.center-this {
+  display: flex;
+  justify-content: center;
+}
+.hedgie-profile {
+  background: white;
+  height: 242.5px;
+  width: 1000px;
+  border-radius: 35px;
+  box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+
+}
+
+.hedgie-photo {
+  height: inherit;
+  width: 242.5px;
+  background: red;
+  display: flex;
+  justify-content: start;
+  z-index: -1;
+
+
+}
+
 
