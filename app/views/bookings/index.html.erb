@@ -10,7 +10,8 @@
       <% end %>
       <div class="info">
         <p><%= link_to booking.hedgie.name, hedgy_path(booking.hedgie) %></p>
-        <p><%= link_to "Reveiw " + booking.hedgie.name, new_booking_review_path(booking)  %></p>
+        <p><%= link_to "Reveiw " + booking.hedgie.name, new_booking_review_path(booking) %></p>
+        <%= booking.status %>
         <p>Playtime booked: <%= booking.start_date %> to <%= booking.end_date %></p>
 
         <% booking.reviews.each do |review| %>
