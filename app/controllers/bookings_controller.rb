@@ -17,7 +17,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.hedgie = @hedgie
 
-
     if @booking.save
       redirect_to bookings_path
     else
@@ -26,12 +25,52 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @user = current_user
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    if @booking.save
+      redirect_to profile_path(@user), notice:"status changed successfully."
+    else
+      redirect_to root_path alert: "Error changing status."
+    end
+  end
+
+
+# def update
+#     @user.update(user_params)
+#     @user.save
+#     if @user.save
+#       redirect_to profile_path(@user), alert:"user created successfully."
+#     else
+#       render :new, alert: "Error creating user."
+#     end
+  # end
+
+
   def show
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :user_id, :hedgie_id, :status)
   end
 end
+
+ # t.date     "start_date"
+ #    t.date     "end_date"
+ #    t.string   "status",     default: "pending"
+ #    t.integer  "user_id"
+ #    t.integer  "hedgie_id"
+
+
+
+
+
+
+
