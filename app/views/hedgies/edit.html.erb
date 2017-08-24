@@ -1,6 +1,7 @@
 
     <%= simple_form_for @hedgie do |f| %>
     <%= f.input :name, as: :text,  placeholder: "name", label: false %>
+    <%= f.input :address, as: :text,  placeholder: "Address", label: false %>
     <%= f.input :description, as: :text,  placeholder: "...", label: false %>
     <%= f.input :photos, as: :attachinary, input_html: { multiple: true } %>
     <%= f.button :submit %>
