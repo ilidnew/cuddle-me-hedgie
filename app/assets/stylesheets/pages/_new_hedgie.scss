@@ -17,7 +17,7 @@
 }
 
 .questions-container {
-  background: rgba(89, 214, 125, 0.8);
+  background: rgba(0, 189, 112, 0.8);
   color: white;
 }
 
@@ -26,6 +26,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #e5e5e5;
+  }
 }
 
 .question-content {
