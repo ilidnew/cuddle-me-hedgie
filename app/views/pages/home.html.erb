@@ -1,15 +1,15 @@
 <%= render 'shared/banner' %>
 
 
-  <div class="container-fluid">
-    <h1><strong>Trending Hedgehogs</strong></h1>
+  <div class="container-fluid card-container">
+    <h1><strong>Trending Hedgies</strong></h1>
 
     <div class="row padded-margin">
       <% @hedgies.each do |hedgie| %>
       <div class="col-xs-12 col-sm-4">
 
         <div class="card" style="background-color: rgba(89, 214, 125, 0.5)">
-
+        <div class="card-background"></div>
          <div class="card-description">
           <% if hedgie.photos? %>
             <%= cl_image_tag hedgie.photos.first.path, width: 350, height: 200, crop: :fill %>
@@ -17,7 +17,7 @@
         </div>
         <div class="card-info">
           <h3 class="white-name"><%= link_to hedgie.name, hedgy_path(hedgie) %></h3>
-          <h3>€ <%= hedgie.price %> per day</h3>
+          <h4>€ <%= hedgie.price %> per day</h4>
         </div>
         <a class="card-link" href="#"></a>
       </div>
