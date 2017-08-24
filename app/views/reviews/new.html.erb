@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row" id="pic-review">
+    <div class="col-xs-12 col-sm-6">
+      <%= simple_form_for([@booking, @review]) do |f| %>
+      <%= f.input :content, as: :text %>
+      <%= f.input :rating, priority: [1], collection: [ 1,2,3,4,5] %>
+      <%= f.button :submit, 'Send!', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+    <div class="hedgie-in-review"></div>
+      <%= @booking.hedgie.name %>
+      <div class="img">
+      <% if @booking.hedgie.photos? %>
+      <%= cl_image_tag @booking.hedgie.photos.first.path, width: 400, height: 300, crop: :fill, class: "photo" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

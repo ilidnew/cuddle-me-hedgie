@@ -3,8 +3,10 @@ class HedgiesController < ApplicationController
   before_action :set_hedgie, only: [:edit, :update, :destroy]
 
   def index
-    @hedgie = params[:search]
     @hedgies = Hedgie.where.not(latitude: nil, longitude: nil)
+    if params[:address]
+      @hedgies = @hedgies.near(params[:address], 10)
+    end
     @hash = Gmaps4rails.build_markers(@hedgies) do |hedgie, marker|
       marker.lat hedgie.latitude
       marker.lng hedgie.longitude
@@ -52,10 +54,6 @@ class HedgiesController < ApplicationController
       format.html { redirect_to profile_path, alert: 'hedgie was successfully deleted.' }
       format.json { head :no_content }
     end
-  end
-
-  def search_by_attr
-    @hedgies = Hedgie.find(params[:attr])
   end
 
   private
