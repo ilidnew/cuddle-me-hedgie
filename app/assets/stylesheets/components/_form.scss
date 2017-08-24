@@ -6,10 +6,13 @@
   width: 100vw;
   flex-direction: column;
   color: #666A6C;
-  background-color: rgba(89, 214, 125, 0.8);
   padding-bottom: 200px;
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #e5e5e5;
+  }
 }
 
 .form-control {
   color: #666a6c !important;
 }
+

@@ -26,6 +26,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #e5e5e5;
+  }
 }
 
 .question-content {
