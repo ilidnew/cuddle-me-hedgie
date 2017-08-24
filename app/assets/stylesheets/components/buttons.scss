@@ -108,6 +108,7 @@
   text-align: center;
   opacity: 0.8;
 
+
 }
 
 .small-button-green:hover {
@@ -115,10 +116,57 @@
   color: #fff!important;
   text-decoration: none;
 
-
-
-
 }
+
+.small-button-orange {
+    border: 2px solid #ffd559;
+    display: inline-block;
+    font-size: 20px;
+    width: 120px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #ffd559 !important;
+    padding: 10px 30px;
+    border-radius: 3px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.small-button-orange:hover {
+  background-color: #ffd559;
+  color: #fff!important;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+.small-button-red {
+    border: 2px solid #c81215;
+    display: inline-block;
+    font-size: 20px;
+    width: 120px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #c81215 !important;
+    padding: 10px 30px;
+    border-radius: 3px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.small-button-red:hover {
+    background-color: #c81215;
+    color: #fff !important;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black;
+}
+
 
 
 a {
