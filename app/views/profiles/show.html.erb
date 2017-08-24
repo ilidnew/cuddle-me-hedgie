@@ -1,25 +1,49 @@
 <div class="text-center">
   <% if current_user.first_name? %>
-    <h1><%= current_user.first_name %>s User Profile</h1>
+    <h1><%= current_user.first_name %>'s User Profile</h1>
   <% else %>
     <h1>User Profile</h1>
   <% end %>
 </div>
+<br>
 
 <div class="container-fluid">
-  <div class="inline">
+  <div class="profile-show-heading">
     <h2>Your listed Hedgehogs</h2>
-      <%= link_to "Add new", new_hedgy_path, class:"small-button-green" %>
+    <div class="profile-btn-margin">
+      <%= link_to "Add new", new_hedgy_path, class:"small-button-green"%>
+    </div>
+  </div>
+</div>
+<br>
+
+
+<% @hedgies.each do |hedgie| %>
+<div class="container-fluid center-this">
+  <div class="hedgie-profile">
+
+    <% if hedgie.photos %>
+    <div class="hedgie-photo" style="background-image: url('<%= (!hedgie.photos.empty? ? cl_image_path(hedgie.photos.first.path, width: 250, height: 250, crop: :fill) : "http://res.cloudinary.com/luenne/image/upload/v1503413708/1580d553302099.592f53e59f1bd_nj8tgu.png") ; %>')">
+    </div>
+    <% end %>
+
+    <div class="hedgie-name-description">
+      <div class="hedgie-name">
+       <%= link_to hedgie.name , hedgy_path(hedgie) %>
+     </div>
+     <div class="hedgie-description pre-scrollable">
+       <%= hedgie.description %>
+     </div>
+   </div>
+
+   <div class="hedgie-edit-delete">
+    <%= link_to "Edit", edit_hedgy_path(hedgie), class: "small-button-orange" %>
+    <br>
+    <%= link_to "Delete", hedgy_path(hedgie), class: "small-button-red", method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
 
-
-
-
-
-
-
-
-
-
-
+  </div>
 </div>
+
+<% end %>
+

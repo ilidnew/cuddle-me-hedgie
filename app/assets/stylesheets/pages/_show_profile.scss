@@ -1,3 +1,103 @@
 .text-center {
   margin: 100px 0px 50px 0px;
 }
+
+.profile-show-heading {
+  display: inline-flex;
+  align-items: center;
+}
+
+.small-button-green {
+  margin-top: 17px;
+}
+
+.center-this {
+  display: flex;
+  justify-content: center;
+}
+
+.center-this-all {
+  display: flex;
+  justify-content: center;
+}
+.hedgie-profile {
+  background: white;
+  height: 242.5px;
+  width: 1000px;
+  border-radius: 35px;
+  box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.4);
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.hedgie-photo {
+  background-size: cover;
+  height: inherit;
+  width: 242.5px;
+  display: flex;
+  justify-content: start;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  margin: 0;
+}
+
+.hedgie-name-description {
+  height: inherit;
+  width: 515px;
+  position: absolute;
+  top: 0px;
+  left: 242.5px;
+  padding-left: 30px;
+}
+
+.hedgie-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  font-size: 31px;
+  padding-top: 20px;
+  height: 60px;
+  position: absolute;
+  top: 0px;
+  text-decoration: none;
+}
+
+.hedgie-name a {
+  text-decoration: none;
+  color: #37a755;
+}
+
+.hedgie-name a:hover {
+  text-decoration: none;
+  color: #37a755;
+  opacity: 0.8;
+
+}
+
+.hedgie-description {
+  width: inherit;
+  height: 182.5px;
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  overflow:scroll;
+  text-align: center;
+
+}
+
+
+.hedgie-edit-delete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  width: 242.5px;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}

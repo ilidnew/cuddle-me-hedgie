@@ -1,9 +1,12 @@
 .home-banner {
   background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://allswalls.com/images/water-hedgehog-muzzle-nose-face-wallpaper-1.jpg');
-  height: 60vh;
+  height: 70vh;
   background-size: cover;
   background-position: center;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 
@@ -16,3 +19,28 @@
   color: $green;
 }
 
+
+.mission-statement > h1 {
+  color: $green;
+}
+
+.mission-statement {
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    padding-left: 0px;
+  }
+}
+.mission-statement p {
+  color: white;
+  font-size: 2em;
+  margin-bottom:1em;
+}
+.mission-statement h1 {
+  font-size: 4em;
+}
+
+.white-name > a {
+  color: white;
+}

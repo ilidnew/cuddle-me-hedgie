@@ -22,10 +22,14 @@ $(function() {
   });
 
   $('#button3').click(function () {
-    $('input:text').text($('#price').val());
+    $('input:text').text($('#address').val());
   });
 
   $('#button4').click(function () {
+    $('input:text').text($('#price').val());
+  });
+
+  $('#button5').click(function () {
     $('input:text').text($('#min_booking').val());
   });
 
