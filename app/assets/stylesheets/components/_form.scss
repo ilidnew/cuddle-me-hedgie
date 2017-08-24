@@ -10,9 +10,11 @@
   ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: #e5e5e5;
   }
+  .larger-form {
+    width: 400px;
+  }
 }
 
 .form-control {
   color: #666a6c !important;
 }
-
