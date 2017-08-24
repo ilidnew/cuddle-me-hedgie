@@ -3,7 +3,7 @@
 
 <%= simple_form_for([@booking, @review]) do |f| %>
   <%= f.input :content, as: :text %>
-  <%= f.input :rating %>
+  <%= f.input :rating, priority: [1], collection: [ 1,2,3,4,5] %>
   <%= f.button :submit, 'Send!', class: 'btn btn-primary' %>
 <% end %>
 
