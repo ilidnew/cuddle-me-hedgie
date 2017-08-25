@@ -21,8 +21,11 @@ function calculateTotalPrice(price, days) {
 function calculateUpdate(initialButtonVal) {
   var difference = calculateDiff($('#booking_start_date').val(), $('#booking_end_date').val())
   var totalPrice = calculateTotalPrice(parseInt($('#price-per-day').text()), difference)
-  var ifZero =
   $('#number-of-days').text(difference)
   $('#total-price').text(totalPrice)
-  $('#booking_submit').val(initialButtonVal + " for €" + totalPrice)
+  totalPrice > 0 ? (
+    $('#booking_submit').val(initialButtonVal + " for €" + totalPrice)
+    ) : (
+    $('#booking_submit').val(initialButtonVal)
+    );
 }
