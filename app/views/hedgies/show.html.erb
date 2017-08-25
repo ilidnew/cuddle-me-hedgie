@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-8 hedgie-input">
+    <div class="hedgie-input">
 
       <% if @hedgie.photos? %>
 
@@ -19,7 +19,7 @@
       <div class="accessories">
         <ul>
           <% if @hedgie.food %>
-            <span><%= cl_image_tag("food_jlnvzl.png") %> &nbsp;&nbsp;Food</span>
+            <span><%= cl_image_tag("food_jlnvzl.png") %> &nbsp;&nbsp;&nbsp;&nbsp;Food</span>
           <% end %>
           <% if @hedgie.bed %>
           <span><%= cl_image_tag("bed_ijm1pn.png") %> &nbsp;&nbsp;Bed</span>
@@ -55,5 +55,9 @@
     </div>
   </div>
   </div>
+    <div class="description">
+      <h1>This is <%= @hedgie.name %></h1>
+      <h3><%= @hedgie.description %></h3>
+    </div>
 </div>
 <br>
