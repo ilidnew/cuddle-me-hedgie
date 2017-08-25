@@ -1,18 +1,23 @@
 .hedgie-input {
+  margin-top: 70px;
   display: flex;
-  justify-content: space-between;
   box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
   padding: 40px;
   background-color: white;
 }
 
 .submit-field {
+  height: 400px;
   text-align: top;
-  padding: 0px 0px 0px 40px;
+  padding: 0px 0px 0px 50px;
   .book-box-color {
     color: $blue;
-    margin: 0px 0px 40px 0px;
+    margin: 0px 0px 20px 0px;
   };
+  h3 {
+    padding-top: 30px;
+    margin-bottom: 20px;
+  }
 }
 
 .form-inline {
@@ -21,17 +26,19 @@
 }
 
 #booking_start_date, #booking_end_date {
-  width: 150px;
+  width: 120px;
+  margin: 40px 20px 40px 20px;
 }
 
 .description {
-  padding: 0px 0px 0px 40px;
+  padding: 0px 0px 0px 30px;
 }
 
 .accessories {
   display: flex;
   ul {
     margin-top: 12.5px;
+    padding: 0px 0px 0px 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -40,4 +47,12 @@
   span {
     text-align: left;
   };
+}
+
+.show-banner {
+  height: 400px;
+}
+
+#booking_submit {
+  width: 400px;
 }
