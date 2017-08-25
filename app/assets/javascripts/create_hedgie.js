@@ -33,6 +33,10 @@ $(function() {
     $('input:text').text($('#min_booking').val());
   });
 
+   $('#button7').click(function () {
+    $('input:text').text($('#trending_hedgies').val());
+  });
+
   var executed = false;
   $('.question-container').bind('mousewheel', function(e) {
     console.log(e)

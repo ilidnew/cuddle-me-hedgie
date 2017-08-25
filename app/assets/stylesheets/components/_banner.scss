@@ -50,6 +50,11 @@
   font-size: 4em;
 }
 
-.white-name {
+.white-name > a {
   color: white;
+  opacity: .6
+}
+
+.white-name > a:hover {
+  opacity: 1;
 }

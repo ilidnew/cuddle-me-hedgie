@@ -10,15 +10,16 @@
        </div>
 
        <% @hedgies.each do |hedgie| %>
-       <div class="col-xs-6 col-sm-6 col-sm-6">
+       <div class="small-card-container">
+          <div class="col-xs-6 col-sm-6 col-sm-6">
          <div class="card-small" style="background-image: url('<%= !hedgie.photos.empty? ? cl_image_path(hedgie.photos.first.path, width: 350, height: 200, crop: :fill, class: "background-image") : "" ; %>')">
-           <div>
-            <%= link_to hedgie.name, hedgy_path(hedgie) %>
-          </div>
-          <div>
-          <%= hedgie.address %>
-          </div>
+         <%= link_to "", hedgy_path(hedgie), class: "card-link" %>
         </div>
+         <div class="card-footer-small">
+          <%= hedgie.name %>
+          <%= hedgie.address %>
+        </div>
+       </div>
       </div>
       <% end %>
     </div>
@@ -48,3 +49,6 @@
 </div>
 </div>
 </div>
+
+
+

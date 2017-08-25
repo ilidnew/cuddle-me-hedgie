@@ -1,15 +1,15 @@
 <%= render 'shared/banner' %>
 
-<div class="container-fluid padded-title">
-  <h1><strong>Trending Hedgies</strong></h1>
+<div class="container-fluid cards-container" id='trending_hedgies' data-prev='#button7' >
+  <h1 classs="padded-title" ><strong>Trending Hedgies</strong></h1>
   <div class="row padded-margin">
     <% @hedgies.each do |hedgie| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card-container">
       <%= link_to "", hedgy_path(hedgie), class: "card-link" %>
         <div class="card" style="background-image: url('<%= !hedgie.photos.empty? ? cl_image_path(hedgie.photos.first.path, width: 350, height: 200, crop: :fill, class: "background-image") : "" ; %>')">
-        </div>
-        <div class="card-footer">
+         </div>
+         <div class="card-footer">
           <h3><%= hedgie.name %></h3>
           <h4>€ <%= hedgie.price %> per day</h4>
         </div>
