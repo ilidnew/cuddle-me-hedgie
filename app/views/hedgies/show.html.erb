@@ -4,22 +4,22 @@
 
       <% if @hedgie.photos? %>
 
-        <% @hedgie.photos.each_with_index do |photo, idx| %>
-          <%= link_to cl_image_path(photo.path, crop: :fill), class: "swipebox show-banner" do %>
-            <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
-          <% end %>
-        <% end %>
+      <% @hedgie.photos.each_with_index do |photo, idx| %>
+      <%= link_to cl_image_path(photo.path, crop: :fill), class: "swipebox show-banner" do %>
+      <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
+      <% end %>
+      <% end %>
       <% else %>
-        <div class="show-banner">
-          <img src="
-  http://res.cloudinary.com/luenne/image/upload/c_scale,h_400,w_600/v1503423810/Screen-Shot-2017-08-22-at-19.34.54_twwpyu.jpg" alt="image" class="show-banner">
-        </div>
+      <div class="show-banner">
+        <img src="
+        http://res.cloudinary.com/luenne/image/upload/c_scale,h_400,w_600/v1503423810/Screen-Shot-2017-08-22-at-19.34.54_twwpyu.jpg" alt="image" class="show-banner">
+      </div>
       <% end %>
 
       <div class="accessories">
         <ul>
           <% if @hedgie.food %>
-            <span><%= cl_image_tag("food_jlnvzl.png") %> &nbsp;&nbsp;&nbsp;&nbsp;Food</span>
+          <span><%= cl_image_tag("food_jlnvzl.png") %> &nbsp;&nbsp;&nbsp;&nbsp;Food</span>
           <% end %>
           <% if @hedgie.bed %>
           <span><%= cl_image_tag("bed_ijm1pn.png") %> &nbsp;&nbsp;Bed</span>
@@ -39,25 +39,39 @@
         </ul>
       </div>
       <div class="submit-field">
-        <h1 class= "book-box-color"><%= @hedgie.name %> the Hedgehog</h1>
+        <div class="price-address">
+          <h1 class= "book-box-color"><%= @hedgie.name %></h1>
+          <h1 class= "book-box-color2"><%= @hedgie.address %></h1>
+        </div>
         <h3>€<span id="price-per-day"><%= @hedgie.price %></span> / per day</h3>
-        <div class="hedgie-input-forms">
-          <%= simple_form_for([@hedgie, @booking]) do |f| %>
-          <div class="form-inline">
+      <div class="hedgie-input-forms">
+        <%= simple_form_for([@hedgie, @booking]) do |f| %>
+        <div class="form-inline">
           <%= f.input :start_date, as: :string, label: "Start", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
           <%= f.input :end_date, as: :string, label: "End", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
-          </div>
-          <br>
-          <%= f.button :submit, "Book #{@hedgie.name}", class: "home-button-green text-center", id: "booking_submit"%>
-          <% end %>
-          <br>
+        </div>
+        <br>
+        <%= f.button :submit, "Book #{@hedgie.name}", class: "home-button-green text-center", id: "booking_submit"%>
+        <% end %>
+        <br>
       </div>
     </div>
   </div>
+  <div class="description">
+    <h1>This is <%= @hedgie.name %></h1>
+    <h3><%= @hedgie.description %></h3>
   </div>
-    <div class="description">
-      <h1>This is <%= @hedgie.name %></h1>
-      <h3><%= @hedgie.description %></h3>
-    </div>
+  <div class="review">
+    <h3>Reviews</h3>
+    <% unless @hedgie.reviews.empty? %>
+    <% @hedgie.reviews.each do |review| %>
+    <p>Comment: <%= review.content %></p>
+    <p>Rating: <%= review.rating %></p>
+    <p>Hedgie lover: <%= review.user.email %></p>
+    <div class="div"></div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
 </div>
 <br>

@@ -15,6 +15,7 @@
 .review-info {
   display: flex;
   margin-top: 40px;
+  justify-content: center;
 }
 
 #new_review {
@@ -31,3 +32,13 @@
   }
 }
 
+.playtime-card {
+  justify-content: center;
+}
+
+.review-container {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}

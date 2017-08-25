@@ -30,6 +30,7 @@ class HedgiesController < ApplicationController
     @hedgie = Hedgie.find(params[:id])
     @hedgies = Hedgie.all
     @booking = Booking.new
+
   end
 
   def edit
@@ -61,6 +62,6 @@ class HedgiesController < ApplicationController
   end
 
   def hedgie_params
-    params.require(:hedgie).permit(:name, :description, :price, :min_booking, :hedgy_id, :food, :bed, :poo, :bowl, :toy, :comb, photos: [])
+    params.require(:hedgie).permit(:name, :description, :price, :min_booking, :hedgy_id, :address, :food, :bed, :poo, :bowl, :toy, :comb, photos: [])
   end
 end
