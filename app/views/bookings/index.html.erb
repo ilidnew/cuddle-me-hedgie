@@ -1,30 +1,29 @@
-<div class="container">
+<div class="playtime-container">
   <div class="row">
-    <div class="title">
-      <h1>Your Hedgie Playtimes</h1>
-    </div>
-    <% @bookings.each do |booking| %>
-    <div class="col-xs-12 col-sm-4">
-    <% if booking.hedgie.photos? %>
-      <%= cl_image_tag booking.hedgie.photos.first.path, width: 400, height: 300, crop: :fill, class: "photo" %>
-      <% end %>
-      <div class="info">
-        <p><%= link_to booking.hedgie.name, hedgy_path(booking.hedgie) %></p>
-        <p><%= link_to "Reveiw " + booking.hedgie.name, new_booking_review_path(booking) %></p>
-        <%= booking.status %>
-        <p>Playtime booked: <%= booking.start_date %> to <%= booking.end_date %></p>
-
-        <% booking.reviews.each do |review| %>
-        <div>
-        <%= review.content %>
-        <%= link_to "Delete", review_path(review),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
+    <div class="playtime-layout">
+      <div class="title">
+        <h1>Your Hedgie Playtimes</h1>
+      </div>
+      <% @bookings.each do |booking| %>
+      <div class="col-xs-12 col-sm-4 playtime-card">
+        <% if booking.hedgie.photos? %>
+          <div class="info">
+            <div class="photo-only">
+            <%= cl_image_tag booking.hedgie.photos.first.path, width: 400, height: 250, crop: :fill, class: "photo" %>
+            <h3><%= link_to booking.hedgie.name, hedgy_path(booking.hedgie) %></h3>
+          </div>
+          <div class="date">
+            <p>Dates:</p> <%= booking.start_date %> to <%= booking.end_date %>
+          </div>
+          <div class="status">
+            <p>Status:</p>
+            <%= booking.status %>
+          </div>
+            <%= link_to "Review " + booking.hedgie.name, new_booking_review_path(booking), class: "btn btn-info" %>
         </div>
         <% end %>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
-</div>
 </div>
