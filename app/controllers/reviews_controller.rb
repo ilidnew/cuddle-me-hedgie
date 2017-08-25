@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.save
     if @review.save
-      redirect_to bookings_path
+      redirect_to hedgy_path(@review.booking.hedgie)
     else
       redirect_to bookings_path
     end
