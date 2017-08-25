@@ -1,40 +1,63 @@
 <div class="container-fluid">
-  <div class="row ">
-    <div class="col-xs-8 hedgie-input">
+  <div class="row">
+    <div class="hedgie-input">
 
       <% if @hedgie.photos? %>
-      <% @hedgie.photos.each_with_index do |photo, idx| %>
-      <%= link_to cl_image_path(photo.path, width: 600, height: 400, crop: :fill), class: "swipebox show-banner" do %>
-      <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
-      <% end %>
-      <% end %>
-      <% else %>
-      <div class="show-banner">
-        <img src="
-http://res.cloudinary.com/luenne/image/upload/c_scale,h_400,w_600/v1503423810/Screen-Shot-2017-08-22-at-19.34.54_twwpyu.jpg" alt="image" class="show-banner">
-      </div>
-      <% end %>
-          <h1>This is <%= @hedgie.name %></h1>
-      <p><%= @hedgie.description %></p>
 
-    </div>
-    <div class="col-xs-4 submit-field">
-      <h1 class= "book-box-color">Book playtime with <%= @hedgie.name %></h1>
-      <div class="hedgie-input-forms">
-        <%= simple_form_for([@hedgie, @booking]) do |f| %>
-        <div class="form-inline">
-        <%= f.input :start_date, as: :string, placeholder: "Start date", label: false, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
-        <%= f.input :end_date, as: :string, placeholder: "End date", label: false, input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
-        </div>
-        <br>
-        <p>Total days: <span id="number-of-days">0</span></p>
-        <p>Price per day: €<span id="price-per-day"><%= @hedgie.price %></span></p>
-        <p>Total price to rent <%= @hedgie.name %>: €<span id="total-price">0</span></p>
-        <%= f.button :submit, "Book #{@hedgie.name}", class: "home-button-green text-center"%>
+        <% @hedgie.photos.each_with_index do |photo, idx| %>
+          <%= link_to cl_image_path(photo.path, crop: :fill), class: "swipebox show-banner" do %>
+            <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
+          <% end %>
         <% end %>
-        <br>
+      <% else %>
+        <div class="show-banner">
+          <img src="
+  http://res.cloudinary.com/luenne/image/upload/c_scale,h_400,w_600/v1503423810/Screen-Shot-2017-08-22-at-19.34.54_twwpyu.jpg" alt="image" class="show-banner">
+        </div>
+      <% end %>
+
+      <div class="accessories">
+        <ul>
+          <% if @hedgie.food %>
+            <span><%= cl_image_tag("food_jlnvzl.png") %> &nbsp;&nbsp;&nbsp;&nbsp;Food</span>
+          <% end %>
+          <% if @hedgie.bed %>
+          <span><%= cl_image_tag("bed_ijm1pn.png") %> &nbsp;&nbsp;Bed</span>
+          <% end %>
+          <% if @hedgie.bowl %>
+          <span><%= cl_image_tag("bowl_dvmgvm.png") %> &nbsp;&nbsp;Bowl</span>
+          <% end %>
+          <% if @hedgie.poo %>
+          <span><%= cl_image_tag("poo_jnrpof.png") %> &nbsp;&nbsp;Poo Scooper</span>
+          <% end %>
+          <% if @hedgie.toy %>
+          <span><%= cl_image_tag("toy_acnxzz.png") %> &nbsp;&nbsp;Toys</span>
+          <% end %>
+          <% if @hedgie.comb %>
+          <span><%= cl_image_tag("comb_d80hvu.png") %> &nbsp;&nbsp;Brush</span>
+          <% end %>
+        </ul>
+      </div>
+      <div class="submit-field">
+        <h1 class= "book-box-color"><%= @hedgie.name %> the Hedgehog</h1>
+        <h3>€<span id="price-per-day"><%= @hedgie.price %></span> / per day</h3>
+        <div class="hedgie-input-forms">
+          <%= simple_form_for([@hedgie, @booking]) do |f| %>
+          <div class="form-inline">
+          <%= f.input :start_date, as: :string, label: "Start", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+          <%= f.input :end_date, as: :string, label: "End", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+          </div>
+          <br>
+          <%= f.button :submit, "Book #{@hedgie.name}", class: "home-button-green text-center", id: "booking_submit"%>
+          <% end %>
+          <br>
       </div>
     </div>
   </div>
+  </div>
+    <div class="description">
+      <h1>This is <%= @hedgie.name %></h1>
+      <h3><%= @hedgie.description %></h3>
+    </div>
 </div>
 <br>

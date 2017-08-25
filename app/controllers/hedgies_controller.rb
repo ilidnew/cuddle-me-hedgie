@@ -4,9 +4,7 @@ class HedgiesController < ApplicationController
 
   def index
     @hedgies = Hedgie.where.not(latitude: nil, longitude: nil)
-    if params[:address]
-      @hedgies = @hedgies.near(params[:address], 10)
-    end
+    @hedgies = @hedgies.near(params[:address], 10) unless params[:address].blank?
     @hash = Gmaps4rails.build_markers(@hedgies) do |hedgie, marker|
       marker.lat hedgie.latitude
       marker.lng hedgie.longitude
@@ -63,6 +61,6 @@ class HedgiesController < ApplicationController
   end
 
   def hedgie_params
-    params.require(:hedgie).permit(:name, :description, :price, :min_booking, :hedgy_id, photos: [])
+    params.require(:hedgie).permit(:name, :description, :price, :min_booking, :hedgy_id, :food, :bed, :poo, :bowl, :toy, :comb, photos: [])
   end
 end

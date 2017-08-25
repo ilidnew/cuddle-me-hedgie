@@ -1,33 +1,58 @@
-.show-banner img {
-  box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
-  border-radius: 5px;
-  margin-top: 20px;
-  height: 445px;
-}
-
 .hedgie-input {
-  padding-left: 50px;
-  padding-top: 25px;
-  h1 {
-    padding-left: 0px;
-  }
-}
-
-.hedgie-input-forms {
-  padding-left: 30px;
+  margin-top: 70px;
+  display: flex;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+  padding: 40px;
+  background-color: white;
 }
 
 .submit-field {
-  box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
-  border-radius: 5px;
-  background: rgba(89, 214, 125, 0.3);
-  height: 450px;
-  margin: 40px -50px;
-  padding-right: 50px;
+  height: 400px;
+  text-align: top;
+  padding: 0px 0px 0px 50px;
+  .book-box-color {
+    color: $blue;
+    margin: 0px 0px 20px 0px;
+  };
+  h3 {
+    padding-top: 30px;
+    margin-bottom: 20px;
+  }
 }
 
-.book-box-color {
- color: $blue;
+.form-inline {
+  display: flex;
+  justify-content: space-between;
 }
 
+#booking_start_date, #booking_end_date {
+  width: 120px;
+  margin: 40px 20px 40px 20px;
+}
 
+.description {
+  padding: 0px 0px 0px 30px;
+}
+
+.accessories {
+  display: flex;
+  ul {
+    margin-top: 12.5px;
+    padding: 0px 0px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  };
+  span {
+    text-align: left;
+  };
+}
+
+.show-banner {
+  height: 400px;
+}
+
+#booking_submit {
+  width: 400px;
+}
