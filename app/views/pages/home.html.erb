@@ -1,24 +1,19 @@
 <%= render 'shared/banner' %>
 
-
-  <div class="container-fluid card-container">
-    <h1><strong>Trending Hedgies</strong></h1>
-
-    <div class="row padded-margin">
-      <% @hedgies.each do |hedgie| %>
-      <div class="col-xs-12 col-sm-4">
-
+<div class="container-fluid padded-title">
+  <h1><strong>Trending Hedgies</strong></h1>
+  <div class="row padded-margin">
+    <% @hedgies.each do |hedgie| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-container">
+      <%= link_to "", hedgy_path(hedgie), class: "card-link" %>
         <div class="card" style="background-image: url('<%= !hedgie.photos.empty? ? cl_image_path(hedgie.photos.first.path, width: 350, height: 200, crop: :fill, class: "background-image") : "" ; %>')">
-        <div class="card-background"></div>
-         <div class="card-description">
         </div>
-        <div class="card-info">
-          <h3 class="white-name"><%= link_to hedgie.name, hedgy_path(hedgie) %></h3>
+        <div class="card-footer">
+          <h3><%= hedgie.name %></h3>
           <h4>€ <%= hedgie.price %> per day</h4>
         </div>
-        <a class="card-link" href="#"></a>
       </div>
     </div>
-<% end %>
+    <% end %>
   </div>
-</div>
