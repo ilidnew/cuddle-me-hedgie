@@ -1,11 +1,12 @@
 .hedgie-all {
-  margin-top: 100px;
+  margin-top: 70px;
+  height: calc(100vh-70px);
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
   padding: 40px;
   background-color: white;
-
+  padding-bottom: 130px;
 }
 
 #map {
@@ -52,9 +53,9 @@
 }
 
 .small-card-container:hover {
-    text-decoration: none;
-    color: $green;
-  }
+  text-decoration: none;
+  color: $green;
+}
 
 .card:hover {
   box-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -65,8 +66,8 @@
 }
 
 #search{
-  width: 77%;
-  margin-left: 6%;
+  width: 74%;
+  margin-left: 4%;
 }
 
 .card-container {
