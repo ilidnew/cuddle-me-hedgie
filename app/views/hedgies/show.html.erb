@@ -1,7 +1,9 @@
 <div class="container-fluid">
-  <div class="row ">
-    <div class="hedgie-input">
+  <div class="row">
+    <div class="col-xs-8 hedgie-input">
+
       <% if @hedgie.photos? %>
+
         <% @hedgie.photos.each_with_index do |photo, idx| %>
           <%= link_to cl_image_path(photo.path, crop: :fill), class: "swipebox show-banner" do %>
             <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fill, style: ( idx > 0 ? "display: none;" : "" ) %>
@@ -13,6 +15,7 @@
   http://res.cloudinary.com/luenne/image/upload/c_scale,h_400,w_600/v1503423810/Screen-Shot-2017-08-22-at-19.34.54_twwpyu.jpg" alt="image" class="show-banner">
         </div>
       <% end %>
+
       <div class="accessories">
         <ul>
           <% if @hedgie.food %>
@@ -48,13 +51,9 @@
           <%= f.button :submit, "Book #{@hedgie.name}", class: "home-button-green text-center", id: "booking_submit"%>
           <% end %>
           <br>
-        </div>
       </div>
     </div>
-    <div class="description">
-      <h1>This is <%= @hedgie.name %></h1>
-      <p><%= @hedgie.description %></p>
-    </div>
+  </div>
   </div>
 </div>
 <br>
