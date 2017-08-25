@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "http://res.cloudinary.com/luenne/image/upload/v1503413708/1580d553302099.592f53e59f1bd_nj8tgu.png" %>
+  <%= image_tag "http://res.cloudinary.com/luenne/image/upload/v1503666715/hedgie_new_color_vtcx3b.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -15,9 +15,9 @@
     <!-- Links when logged in -->
 
     <!-- Avatar with dropdown menu -->
-    <div class="navbar-wagon-item">
+    <div class="navbar-wagon-item"
       <div class="dropdown">
-        <% avatar_url = current_user.facebook_picture_url || "http://res.cloudinary.com/luenne/image/upload/c_scale,h_30,w_30/v1503510665/Hedgehog-white-bg_abkvci.jpg" %>
+        <% avatar_url = current_user.facebook_picture_url || "http://res.cloudinary.com/luenne/image/upload/c_scale,h_30,w_30/v1503666715/hedgie_new_color_avatar_uewdvg.jpg" %>
         <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>

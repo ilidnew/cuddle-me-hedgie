@@ -1,4 +1,4 @@
-<div class="text-center">
+<div class="text-center profile-user-name">
   <% if current_user.first_name? %>
     <h1><%= current_user.first_name %>'s User Profile</h1>
   <% else %>
@@ -7,12 +7,10 @@
 </div>
 <br>
 
-<div class="container-fluid">
+<div class="text-center">
   <div class="profile-show-heading">
     <h2>Your listed Hedgehogs</h2>
-    <div class="profile-btn-margin">
-      <%= link_to "Add new", new_hedgy_path, class:"small-button-green"%>
-    </div>
+    <%= link_to "Add new", new_hedgy_path, class:"small-button-green"%>
   </div>
 </div>
 <br>
@@ -22,18 +20,38 @@
   <div class="hedgie-profile">
 
     <% if hedgie.photos %>
-    <div class="hedgie-photo" style="background-image: url('<%= (!hedgie.photos.empty? ? cl_image_path(hedgie.photos.first.path, width: 250, height: 250, crop: :fill) : "http://res.cloudinary.com/luenne/image/upload/v1503413708/1580d553302099.592f53e59f1bd_nj8tgu.png") ; %>')">
+    <div class="hedgie-photo" style="background-image: url('<%= (!hedgie.photos.empty? ? cl_image_path(hedgie.photos.first.path, width: 250, height: 320, crop: :fill) : "http://res.cloudinary.com/luenne/image/upload/c_scale,h_320,w_250/v1503666715/hedgie_new_color_vtcx3b.png") ; %>')">
     </div>
     <% end %>
 
     <div class="hedgie-name-description">
       <div class="hedgie-name">
-       <%= link_to hedgie.name , hedgy_path(hedgie) %>
-     </div>
-     <div class="hedgie-description pre-scrollable">
+        <h3><%= link_to hedgie.name , hedgy_path(hedgie) %></h3>
+      </div>
+      <div class="hedgie-description">
        <%= hedgie.description %>
+      </div>
+      <div class="hedgie-booking">
+        <div class="text-center"><h4>Playtime bookings:</h4></div>
+        <% hedgie.bookings.each do |booking| %>
+        <div class="form-inline">
+          <%= booking.user.email %>
+          <%= booking.status %>
+          <%= simple_form_for(booking) do |f| %>
+          <%= f.input :status, priority: [ "pending" ], collection: ["pending", "accpeted", "declined",] %>
+          <%= f.button :submit, 'Send!', class: 'very-small-button-green' %>
+          <% end %>
+        </div>
+        <% end %>
 
-     </div>
+
+
+
+
+
+
+
+      </div>
    </div>
 
    <div class="hedgie-edit-delete">
@@ -46,4 +64,8 @@
 </div>
 
 <% end %>
+
+
+
+
 
